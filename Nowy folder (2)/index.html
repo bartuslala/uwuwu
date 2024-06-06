@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Sprawdzanie parzystości liczby</title>
+</head>
+<body>
+    <h1>Sprawdź czy liczba jest parzysta</h1>
+    <form id="numberForm">
+        <label for="number">Podaj liczbę:</label>
+        <input type="number" id="number" name="number" required>
+        <button type="submit">Sprawdź</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('numberForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const number = document.getElementById('number').value;
+            const resultDiv = document.getElementById('result');
+
+            if (number % 2 === 0) {
+                resultDiv.textContent = "Liczba jest parzysta";
+            } else {
+                resultDiv.textContent = "Liczba jest nieparzysta";
+            }
+        });
+    </script>
+</body>
+</html>
